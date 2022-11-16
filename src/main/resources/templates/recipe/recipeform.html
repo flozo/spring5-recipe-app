@@ -4,31 +4,32 @@
     <meta charset="UTF-8"/>
     <title>Recipe Form</title>
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"
-          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"
+          th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}">
 
-    <script src="/webjars/jquery/1.11.1/jquery.min.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.6.1.min.js"
+            integrity="sha384-i61gTtaoovXtAbKjo903+O55Jkn2+RtzHtvNez+yI49HAASvznhe9sZyjaSHTau9"
+            crossorigin="anonymous" th:src="@{/webjars/jquery/3.6.1/jquery.min.js}"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-            crossorigin="anonymous" th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+            crossorigin="anonymous" th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
 </head>
 <body>
 <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
 <div class="container-fluid" style="margin-top: 20px">
-    <div class="row">
-        <div class="col-md-6 col-md-offset-3">
+    <div class="justify-content-center">
+        <div class="col-md-6 offset-md-3">
             <form  th:object="${recipe}" th:action="@{/recipe/}"  method="post">
                 <input type="hidden" th:field="*{id}"/>
-                <div class="pannel-group">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Edit Recipe Information</h1>
+                <div class="panel-group">
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-light mb-3">
+                            <h1 class="card-title">Edit Recipe Information</h1>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-3 form-group">
                                     <label>Recipe Description:</label>
@@ -88,18 +89,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-light mb-3">
                             <div class="row">
                                 <div class="col-md-11 ">
-                                    <h1 class="panel-title">Ingredients</h1>
+                                    <h1 class="card-title">Ingredients</h1>
                                 </div>
                                 <div class="col-md-1">
                                     <a class="btn btn-default" href="#" role="button">Edit</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
                                     <ul>
@@ -115,22 +116,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Directions</h1>
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-light mb-3">
+                            <h1 class="card-title">Directions</h1>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 form-group">
                                     <textarea class="form-control" rows="3" th:field="*{directions}"></textarea></div>
                             </div>
                         </div>
                     </div>
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">
-                            <h1 class="panel-title">Notes</h1>
+                    <div class="card mb-3">
+                        <div class="card-header bg-primary text-light mb-3">
+                            <h1 class="card-title">Notes</h1>
                         </div>
-                        <div class="panel-body">
+                        <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12 form-group">
                                     <textarea class="form-control" rows="3" th:field="*{notes.recipeNotes}"></textarea>
