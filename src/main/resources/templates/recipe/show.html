@@ -17,13 +17,13 @@
             crossorigin="anonymous" th:src="@{/webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
 </head>
 <body>
+<!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
 <div class="container-fluid" style="margin-top: 20px">
     <div class="row justify-content-center">
         <div class="col-md-6 offset-md-3">
             <div class="panel-group">
                 <div class="card card-primary border border-primary" style="margin: 20px 0">
                     <div class="card-header bg-primary text-light">
-                        <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                         <h7 class="card-title" th:text="${recipe.description}">Recipe Description Here!</h7>
                     </div>
                     <div class="card-body">
@@ -35,7 +35,6 @@
                                 <ul>
                                     <li th:remove="all">cat one</li>
                                     <li th:remove="all">cat two</li>
-                                    <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                                     <li th:each="category : ${recipe.categories}"
                                         th:text="${category.getDescription()}">cat three
                                     </li>
@@ -96,7 +95,6 @@
                                 <ul>
                                     <li th:remove="all">1 Cup of milk</li>
                                     <li th:remove="all">1 Teaspoon of chocolate</li>
-                                    <!--/*@thymesVar id="recipe" type="guru.springframework.domain.Recipe"*/-->
                                     <li th:each="ingredient : ${recipe.ingredients}"
                                         th:text="${ingredient.getAmount() +
                                         ' ' + ingredient.uom.getDescription() +
