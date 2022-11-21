@@ -24,7 +24,15 @@
             <div class="panel-group">
                 <div class="card card-primary border border-primary" style="margin: 20px 0">
                     <div class="card-header bg-primary text-light">
-                        <h7 class="card-title" th:text="${recipe.description}">Recipe Description Here!</h7>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <h7 class="card-title" th:text="${recipe.description}">Recipe Description Here!</h7>
+                            </div>
+                            <div class="col-md-1">
+                                <a class="btn btn-light" href="#"
+                                   th:href="@{'/recipe/' + ${recipe.id} + '/image'}" role="button">Change Image</a>
+                            </div>
+                        </div>
                     </div>
                     <div class="card-body">
                         <div class="row justify-content-center">
@@ -39,6 +47,11 @@
                                         th:text="${category.getDescription()}">cat three
                                     </li>
                                 </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="../../static/images/guacamole400x400WithX.jpg"
+                                th:src="@{/images/guacamole400x400WithX.jpg}"
+                                width="200" height="200">
                             </div>
                         </div>
                         <div class="row justify-content-center">
