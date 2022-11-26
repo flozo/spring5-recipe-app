@@ -101,6 +101,7 @@ public class RecipeControllerTest {
         mockMvc.perform(post("/recipe")
                         .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                         .param("id", "")
+                        .param("cookTime", "3000")
                 )
                 .andExpect(status().isOk())
                 .andExpect(model().attributeExists("recipe"))
@@ -113,8 +114,8 @@ public class RecipeControllerTest {
         command.setId(2L);
         when(recipeService.findCommandById(anyLong())).thenReturn(command);
         mockMvc.perform(get("/recipe/1/update"))
-                .andExpect(MockMvcResultMatchers.status().isOk())
-                .andExpect(MockMvcResultMatchers.view().name("recipe/recipeform"))
+                .andExpect(status().isOk())
+                .andExpect(view().name("recipe/recipeform"))
                 .andExpect(model().attributeExists("recipe"));
     }
 
